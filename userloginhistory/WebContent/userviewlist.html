@@ -1,0 +1,24 @@
+<ol dir-paginate="user in lstUser| itemsPerPage:rowLimit | orderBy:sortColumn:reverseSort| filter:SearchText | limitTo:rowLimit">
+	<li>
+		{{user.user.userName}}
+	</li>
+	<li>
+		{{user.user.email}}
+	</li>
+	<li>
+		{{user.user.cellNo}}
+	</li>
+	<li>
+		{{user.serverLoginDate}}
+	</li>
+	<li>
+		{{user.userLogInLocation}}
+	</li>
+	<li>
+		{{user.userLoginDatenTimezone}}
+	</li>
+</ol>
+<br/>
+<br/>
+
+

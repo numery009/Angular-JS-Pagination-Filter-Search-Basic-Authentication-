@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="ISO-8859-1">
+<title>User LogIn History List</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/dirPagination.js"></script>
+<script type="text/javascript" src="js/customerController.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body ng-controller="customerController" ng-app="myapp" >
+	<div class="content"> 
+	<h1 align="center">User LogIn History List</h1>
+	Rows to Display: 
+	<input type="number" step="1" min="10" max="200" ng-model="rowLimit">
+	<br/>
+	<br/>
+	Search:
+	<input type="text" placeholder="Search User" ng-model="SearchText" />
+	<br />
+	<br />
+	Select View :
+	<select ng-model="usertable">
+		<option value="userviewtable.html">Table</option>	
+		<option value="userviewlist.html">List</option>
+	</select>
+	<br/>
+	<br/>
+	<br/>
+	<div ng-include="usertable"> </div>
+		
+	<dir-pagination-controls  direction-links="true"
+		boundary-links="true" class="pull-left"> </dir-pagination-controls>
+	</div>
+</body>
+</html>

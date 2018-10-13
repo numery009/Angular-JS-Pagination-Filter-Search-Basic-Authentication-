@@ -1,0 +1,32 @@
+<table>
+	<tr>
+		<th ng-click="sortData('user.userName')">User Name
+			<div ng-class="getSortColumn('user.userName')"></div>
+		</th>
+		<th ng-click="sortData('user.email')">Email
+			<div ng-class="getSortColumn('user.email')"></div>
+		</th>
+		<th ng-click="sortData('user.cellNo')">Cell No
+			<div ng-class="getSortColumn('user.cellNo')"></div>
+		</th>
+		<th ng-click="sortData('serverLoginDate')">Server Login Date Time
+			<div ng-class="getSortColumn('serverLoginDate')"></div>
+		</th>
+		<th ng-click="sortData('userLogInLocation')">User LogIn Location
+			<div ng-class="getSortColumn('userLogInLocation')"></div>
+		</th>
+		<th ng-click="sortData('userLoginDatenTimezone')">User Login
+			DatenTimezone
+			<div ng-class="getSortColumn('userLoginDatenTimezone')"></div>
+		</th>
+	</tr>
+	<tr
+		dir-paginate="user in lstUser| itemsPerPage:rowLimit | orderBy:sortColumn:reverseSort| filter:SearchText | limitTo:rowLimit">
+		<td>{{user.user.userName}}</td>
+		<td>{{user.user.email}}</td>
+		<td>{{user.user.cellNo}}</td>
+		<td>{{user.serverLoginDate}}</td>
+		<td>{{user.userLogInLocation}}</td>
+		<td>{{user.userLoginDatenTimezone}}</td>
+	</tr>
+</table>
